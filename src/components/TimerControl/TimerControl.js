@@ -1,8 +1,12 @@
-const TimerControl = ({ onStartStop, onReset }) => {
+const TimerControl = ({ isRunning, onStartStop, onReset }) => {
     return (
         <div>
-            <button onClick={onStartStop}>Start</button>
-            <button onClick={onReset}>Reset</button>
+            <button id='start_stop' onClick={onStartStop}>
+                {isRunning ? 'Pause' : 'Start'}
+            </button>
+            <button id='reset' onClick={onReset}>
+                Reset
+            </button>
         </div>
     );
 };
