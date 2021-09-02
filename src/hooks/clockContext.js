@@ -1,4 +1,4 @@
-import React, { useContext, useReducer } from 'react';
+import React, { useContext, useReducer, useRef } from 'react';
 import reducer from './clockReducer';
 import actions from './clockActions';
 import useInterval from './useInterval';
@@ -15,6 +15,7 @@ const initialState = {
 
 const ClockProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
+    const audioRef = useRef(null);
 
     const onIncrement = (phaseType) => {
         if (!state.isRunning) {
@@ -46,6 +47,8 @@ const ClockProvider = ({ children }) => {
 
     const resetTimer = () => {
         dispatch({ type: actions.RESET_TIMER });
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
     };
 
     useInterval(
@@ -57,6 +60,7 @@ const ClockProvider = ({ children }) => {
                 if (state.timerPhase === phaseTypes.BREAK) {
                     dispatch({ type: actions.SWITCH_TO_SESSION_PHASE });
                 }
+                audioRef.current.play();
             } else {
                 dispatch({ type: actions.DECREMENT_TIMER });
             }
@@ -75,6 +79,12 @@ const ClockProvider = ({ children }) => {
             }}
         >
             {children}
+            <audio
+                id='beep'
+                preload='auto'
+                ref={audioRef}
+                src='https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav'
+            />
         </ClockContext.Provider>
     );
 };
