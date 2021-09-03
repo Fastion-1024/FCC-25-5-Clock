@@ -1,4 +1,4 @@
-const PhaseControl = ({ label, value, decrement, increment, min, max }) => {
+const PhaseControl = ({ label, value, decrement, increment, updateValue, min, max }) => {
     const handleIncrement = () => {
         if (max === undefined) increment(label);
         if (value < max) increment(label);
@@ -6,6 +6,10 @@ const PhaseControl = ({ label, value, decrement, increment, min, max }) => {
     const handleDecrement = () => {
         if (min === undefined) decrement(label);
         if (value > min) decrement(label);
+    };
+
+    const handleRangeChange = (e) => {
+        updateValue(label, e.target.value);
     };
 
     const handleWheel = (e) => {
@@ -29,6 +33,14 @@ const PhaseControl = ({ label, value, decrement, increment, min, max }) => {
             <button id={`${label}-increment`} onClick={handleIncrement}>
                 Increase
             </button>
+            <input
+                type='range'
+                min={min}
+                max={max}
+                step='1'
+                value={value}
+                onChange={handleRangeChange}
+            />
         </div>
     );
 };

@@ -37,6 +37,17 @@ const ClockProvider = ({ children }) => {
         }
     };
 
+    const updatePhaseTime = (phaseType, value) => {
+        if (!state.isRunning) {
+            if (phaseType === phaseTypes.BREAK)
+                dispatch({ type: actions.UPDATE_BREAK, payload: value });
+            if (phaseType === phaseTypes.SESSION) {
+                dispatch({ type: actions.UPDATE_SESSION, payload: value });
+                dispatch({ type: actions.SWITCH_TO_SESSION_PHASE });
+            }
+        }
+    };
+
     const startStopTimer = () => {
         if (state.isRunning) {
             dispatch({ type: actions.STOP_TIMER });
@@ -74,6 +85,7 @@ const ClockProvider = ({ children }) => {
                 ...state,
                 onIncrement,
                 onDecrement,
+                updatePhaseTime,
                 startStopTimer,
                 resetTimer,
             }}

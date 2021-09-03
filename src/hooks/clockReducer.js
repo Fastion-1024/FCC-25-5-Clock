@@ -9,11 +9,15 @@ const reducer = (state, action) => {
             return { ...state, breakTime: state.breakTime + 1 };
         case actions.DECREMENT_BREAK:
             return { ...state, breakTime: state.breakTime - 1 };
+        case actions.UPDATE_BREAK:
+            return { ...state, breakTime: action.payload };
 
         case actions.INCREMENT_SESSION:
             return { ...state, sessionTime: state.sessionTime + 1 };
         case actions.DECREMENT_SESSION:
             return { ...state, sessionTime: state.sessionTime - 1 };
+        case actions.UPDATE_SESSION:
+            return { ...state, sessionTime: action.payload };
 
         case actions.START_TIMER:
             return { ...state, isRunning: true };

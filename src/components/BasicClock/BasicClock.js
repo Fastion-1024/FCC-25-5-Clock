@@ -11,6 +11,7 @@ const BasicClock = () => {
         breakTime,
         onIncrement,
         onDecrement,
+        updatePhaseTime,
         timerValue,
         timerPhase,
         isRunning,
@@ -26,6 +27,7 @@ const BasicClock = () => {
                     value={breakTime}
                     increment={onIncrement}
                     decrement={onDecrement}
+                    updateValue={updatePhaseTime}
                     min={1}
                     max={60}
                 />
@@ -34,6 +36,7 @@ const BasicClock = () => {
                     value={sessionTime}
                     increment={onIncrement}
                     decrement={onDecrement}
+                    updateValue={updatePhaseTime}
                     min={1}
                     max={60}
                 />
