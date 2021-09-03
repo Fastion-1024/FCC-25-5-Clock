@@ -2,10 +2,11 @@ import { useClockContext } from '../../hooks/clockContext';
 import { convertSeconds } from '../../lib/convertToTime';
 import phaseTypes from '../../lib/phaseTypes';
 import PhaseControl from '../PhaseControl/PhaseControl';
+import timerStyles from '../../lib/timerStyles';
 import Timer from '../Timer/Timer';
 import TimerControl from '../TimerControl/TimerControl';
 
-const BasicClock = () => {
+const Container = () => {
     const {
         sessionTime,
         breakTime,
@@ -17,10 +18,22 @@ const BasicClock = () => {
         isRunning,
         startStopTimer,
         resetTimer,
+        timerStyle,
     } = useClockContext();
 
+    const getTimerComponent = () => {
+        switch (timerStyle) {
+            case timerStyles.SIMPLE:
+                return <Timer value={convertSeconds(timerValue)} phase={timerPhase} />;
+
+            default:
+                return <Timer value={convertSeconds(timerValue)} phase={timerPhase} />;
+        }
+    };
+
     return (
-        <section>
+        <section className='container'>
+            <h1>25 + 5 Clock</h1>
             <div>
                 <PhaseControl
                     label={phaseTypes.BREAK}
@@ -41,10 +54,10 @@ const BasicClock = () => {
                     max={60}
                 />
             </div>
-            <Timer value={convertSeconds(timerValue)} phase={timerPhase} />
+            {getTimerComponent()}
             <TimerControl isRunning={isRunning} onStartStop={startStopTimer} onReset={resetTimer} />
         </section>
     );
 };
 
-export default BasicClock;
+export default Container;

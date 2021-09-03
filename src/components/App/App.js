@@ -1,12 +1,12 @@
 import ClockProvider from '../../hooks/clockContext';
-import BasicClock from '../BasicClock/BasicClock';
+import Container from '../Container/Container';
 import './App.css';
 
 function App() {
     return (
         <main>
             <ClockProvider>
-                <BasicClock />
+                <Container />
             </ClockProvider>
         </main>
     );

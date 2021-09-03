@@ -3,6 +3,7 @@ import reducer from './clockReducer';
 import actions from './clockActions';
 import useInterval from './useInterval';
 import phaseTypes from '../lib/phaseTypes';
+import timerStyles from '../lib/timerStyles';
 
 const ClockContext = React.createContext();
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
     isRunning: false,
     timerValue: 25 * 60,
     timerPhase: phaseTypes.SESSION,
+    timerStyle: timerStyles.SIMPLE,
 };
 
 const ClockProvider = ({ children }) => {
