@@ -8,8 +8,19 @@ const PhaseControl = ({ label, value, decrement, increment, min, max }) => {
         if (value > min) decrement(label);
     };
 
+    const handleWheel = (e) => {
+        // Scroll Up
+        if (e.deltaY < 0) {
+            handleIncrement();
+        }
+        // Scroll Down
+        else if (e.deltaY > 0) {
+            handleDecrement();
+        }
+    };
+
     return (
-        <div>
+        <div onWheel={handleWheel}>
             <span id={`${label}-label`}>{label} length</span>
             <button id={`${label}-decrement`} onClick={handleDecrement}>
                 Decrease
