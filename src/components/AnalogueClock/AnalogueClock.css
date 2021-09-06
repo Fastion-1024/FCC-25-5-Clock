@@ -1,0 +1,150 @@
+:root {
+    --clock-width: 20rem;
+    --clock-height: 20rem;
+    --mark-primary-width: 0.4rem;
+    --mark-secondary-width: 0.2rem;
+
+    --hand-second-height: 65%;
+    --hand-second-width: 0.2em;
+    --hand-minute-height: 60%;
+    --hand-minute-width: 0.4em;
+
+    --clr-clock-primary: hsl(220, 17%, 17%);
+    --clr-clock-secondary: hsl(220, 15%, 25%);
+    --clr-clock-border: hsl(220, 25%, 30%);
+    --clr-clock-mark-primary: hsl(0, 0%, 92%);
+    --clr-clock-mark-secondar: hsl(179, 93%, 44%);
+    --clr-clock-hand-primary: hsl(345, 100%, 59%);
+    --clr-clock-hand-secondary: hsl(27, 100%, 50%);
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 
+    Clock Height, width, background, border and shape.
+*/
+.analogue-clock {
+    width: var(--clock-width);
+    height: var(--clock-width);
+    position: relative;
+    border-radius: 50%;
+    border: 0.5em solid var(--clr-clock-border);
+    background-color: var(--clr-clock-primary);
+}
+
+/* Clock outer-face. All time marks will relative to this element. */
+.outer-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+/* Setup for the time marks. Size, shape, colour and positioning*/
+.outer-face::before,
+.outer-face::after,
+.outer-face .mark {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: var(--mark-primary-width);
+    left: calc(50% - (var(--mark-primary-width) / 2));
+    background-color: var(--clr-clock-mark-primary);
+    z-index: 0;
+}
+
+/* Secondary marks */
+.outer-face .mark {
+    width: var(--mark-secondary-width);
+    background-color: var(--clr-clock-mark-secondar);
+}
+
+/* Update the position of each mark to make 8 dissecting lines*/
+.outer-face::after {
+    transform: rotate(90deg);
+}
+
+.outer-face .mark.mark-one {
+    transform: rotate(30deg);
+}
+
+.outer-face .mark.mark-two {
+    transform: rotate(60deg);
+}
+
+.outer-face .mark.mark-three {
+    transform: rotate(120deg);
+}
+
+.outer-face .mark.mark-four {
+    transform: rotate(150deg);
+}
+
+/* 
+    Setup the inner face. This will obscure the majority of the lines
+    Adjust the size of the inner face to make the marks large or smaller.
+*/
+
+.inner-face {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 85%;
+    height: 85%;
+    border-radius: 100%;
+    background-color: var(--clr-clock-primary);
+    z-index: 1;
+}
+
+/* Inner circle for clock hands */
+.inner-face::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - (10% / 2));
+    left: calc(50% - (10% / 2));
+    width: 10%;
+    height: 10%;
+    margin: auto;
+    border-radius: 100%;
+    background-color: var(--clr-clock-secondary);
+    z-index: 10;
+}
+
+/* 
+    Setup the hands
+    Width = Length of hand,
+    Height = Thickness of hand
+    
+*/
+
+.hand {
+    position: absolute;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    border-radius: 0.5em;
+}
+
+.second-hand {
+    width: var(--hand-second-width);
+    height: var(--hand-second-height);
+    left: calc(50% - (var(--hand-second-width) / 2));
+    top: calc((50% - var(--hand-second-height)) + 10%);
+    transform-origin: center calc(var(--hand-second-height) + 20%);
+    background-color: var(--clr-clock-hand-secondary);
+    z-index: 6;
+}
+
+.minute-hand {
+    width: var(--hand-minute-width);
+    height: var(--hand-minute-height);
+    left: calc(50% - (var(--hand-minute-width) / 2));
+    top: calc((50% - var(--hand-second-height)) + 15%);
+    transform-origin: center calc(var(--hand-minute-height) + 24%);
+    background-color: var(--clr-clock-hand-primary);
+    z-index: 5;
+}
