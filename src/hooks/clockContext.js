@@ -40,11 +40,12 @@ const ClockProvider = ({ children }) => {
     };
 
     const updatePhaseTime = (phaseType, value) => {
+        const newValue = parseInt(value);
         if (!state.isRunning) {
             if (phaseType === phaseTypes.BREAK)
-                dispatch({ type: actions.UPDATE_BREAK, payload: value });
+                dispatch({ type: actions.UPDATE_BREAK, payload: newValue });
             if (phaseType === phaseTypes.SESSION) {
-                dispatch({ type: actions.UPDATE_SESSION, payload: value });
+                dispatch({ type: actions.UPDATE_SESSION, payload: newValue });
                 dispatch({ type: actions.SWITCH_TO_SESSION_PHASE });
             }
         }
