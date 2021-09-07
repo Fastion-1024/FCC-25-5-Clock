@@ -3,6 +3,7 @@ const timerStyles = {
     PROGRESS: 'PROGRESS',
     FLIP: 'FLIP',
     ANALOGUE: 'ANALOGUE',
+    SLIDER: 'SLIDER',
 };
 
 export default timerStyles;
