@@ -1,0 +1,10 @@
+/* Main Container */
+.timer-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.timer-control button {
+    margin: 0 2em;
+}

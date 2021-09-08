@@ -1,3 +1,5 @@
+import './PhaseControl.css';
+
 const PhaseControl = ({ label, value, decrement, increment, updateValue, min, max }) => {
     const handleIncrement = () => {
         if (max === undefined) increment(label);
@@ -24,13 +26,17 @@ const PhaseControl = ({ label, value, decrement, increment, updateValue, min, ma
     };
 
     return (
-        <div onWheel={handleWheel}>
-            <span id={`${label}-label`}>{label} length</span>
-            <button id={`${label}-decrement`} onClick={handleDecrement}>
+        <div className='phase-control' onWheel={handleWheel}>
+            <span id={`${label}-label`} className='label'>
+                {label} length
+            </span>
+            <button id={`${label}-decrement`} className='decrement' onClick={handleDecrement}>
                 Decrease
             </button>
-            <span id={`${label}-length`}>{value}</span>
-            <button id={`${label}-increment`} onClick={handleIncrement}>
+            <span id={`${label}-length`} className='value'>
+                {value}
+            </span>
+            <button id={`${label}-increment`} className='increment' onClick={handleIncrement}>
                 Increase
             </button>
             <input
@@ -40,6 +46,7 @@ const PhaseControl = ({ label, value, decrement, increment, updateValue, min, ma
                 step='1'
                 value={value}
                 onChange={handleRangeChange}
+                className='slider'
             />
         </div>
     );

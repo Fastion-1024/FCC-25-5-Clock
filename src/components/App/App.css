@@ -1,0 +1,65 @@
+/*-------------------
+-------CSS Vars------
+-------------------*/
+
+:root {
+    /* Colours */
+    --clr-bg-dark-hue: 220;
+    --clr-bg-dark-sat: 17%;
+    --clr-bg-dark-lit: 17%;
+    --clr-bg-dark: hsl(var(--clr-bg-dark-hue), var(--clr-bg-dark-sat), var(--clr-bg-dark-lit));
+
+    --clr-bg-light-hue: 0;
+    --clr-bg-light-sat: 0%;
+    --clr-bg-light-lit: 92%;
+    --clr-bg-light: hsl(var(--clr-bg-light-hue), var(--clr-bg-light-sat), var(--clr-bg-light-lit));
+
+    --clr-primary-hue: 179;
+    --clr-primary-sat: 93%;
+    --clr-primary-lit: 44%;
+    --clr-primary: hsl(var(--clr-primary-hue), var(--clr-primary-sat), var(--clr-primary-lit));
+
+    --clr-secondary-hue: 345;
+    --clr-secondary-sat: 100%;
+    --clr-secondary-lit: 59%;
+    --clr-secondary: hsl(
+        var(--clr-secondary-hue),
+        var(--clr-primary-sat),
+        var(--clr-secondary-lit)
+    );
+
+    --clr-accent-hue: 27;
+    --clr-accent-sat: 100%;
+    --clr-accent-lit: 50%;
+    --clr-accent: hsl(var(--clr-accent-hue), var(--clr-accent-sat), var(--clr-accent-lit));
+
+    /* Fonts */
+    --fs-header: 3rem;
+    --fs-xl: 2rem;
+    --fs-l: 1.4rem;
+    --fs-m: 1.2rem;
+    --fs-s: 1rem;
+    --fs-xs: 0.8rem;
+    --fs-icon: 2rem;
+
+    --ff-header: 'Abril Fatface', cursive;
+    --ff-body: 'Vollkorn', serif;
+}
+
+/* Reset All Elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* TEMP OUTLINE FOR DEVELOPEMNT BLOCKING */
+    /* outline: 0.1em solid red; */
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

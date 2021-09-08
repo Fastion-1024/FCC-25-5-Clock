@@ -1,0 +1,33 @@
+/* Main Container */
+.phase-control {
+    display: grid;
+    grid-template-areas:
+        'header header header'
+        'decrement value increment'
+        'slider slider slider';
+    place-items: center;
+}
+
+.phase-control .label {
+    grid-area: header;
+    text-transform: capitalize;
+    font-family: var(--ff-header);
+    font-size: var(--fs-l);
+}
+
+.phase-control .decrement {
+    grid-area: decrement;
+}
+
+.phase-control .value {
+    grid-area: value;
+    font-size: var(--fs-l);
+}
+
+.phase-control .increment {
+    grid-area: increment;
+}
+
+.phase-control .slider {
+    grid-area: slider;
+}
