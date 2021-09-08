@@ -1,10 +1,14 @@
 import { useClockContext } from '../../hooks/clockContext';
 import { convertSeconds } from '../../lib/convertToTime';
 import phaseTypes from '../../lib/phaseTypes';
-import PhaseControl from '../PhaseControl/PhaseControl';
 import timerStyles from '../../lib/timerStyles';
+import PhaseControl from '../PhaseControl/PhaseControl';
 import Timer from '../Timer/Timer';
+import AnalogueClock from '../AnalogueClock/AnalogueClock';
+import SliderClock from '../SliderClock/SliderClock';
+import ProgressClock from '../ProgressClock/ProgressClock';
 import TimerControl from '../TimerControl/TimerControl';
+import './Container.css';
 
 const Container = () => {
     const {
@@ -26,6 +30,20 @@ const Container = () => {
             case timerStyles.SIMPLE:
                 return <Timer value={convertSeconds(timerValue)} phase={timerPhase} />;
 
+            case timerStyles.ANALOGUE:
+                return <AnalogueClock time={timerValue} />;
+
+            case timerStyles.SLIDER:
+                return <SliderClock time={timerValue} />;
+
+            case timerStyles.PROGRESS:
+                return (
+                    <ProgressClock
+                        time={timerValue}
+                        minutesMax={timerPhase === phaseTypes.SESSION ? sessionTime : breakTime}
+                    />
+                );
+
             default:
                 return <Timer value={convertSeconds(timerValue)} phase={timerPhase} />;
         }
@@ -34,27 +52,25 @@ const Container = () => {
     return (
         <section className='container'>
             <h1>25 + 5 Clock</h1>
-            <div>
-                <PhaseControl
-                    label={phaseTypes.BREAK}
-                    value={breakTime}
-                    increment={onIncrement}
-                    decrement={onDecrement}
-                    updateValue={updatePhaseTime}
-                    min={1}
-                    max={60}
-                />
-                <PhaseControl
-                    label={phaseTypes.SESSION}
-                    value={sessionTime}
-                    increment={onIncrement}
-                    decrement={onDecrement}
-                    updateValue={updatePhaseTime}
-                    min={1}
-                    max={60}
-                />
-            </div>
-            {getTimerComponent()}
+            <PhaseControl
+                label={phaseTypes.BREAK}
+                value={breakTime}
+                increment={onIncrement}
+                decrement={onDecrement}
+                updateValue={updatePhaseTime}
+                min={1}
+                max={60}
+            />
+            <PhaseControl
+                label={phaseTypes.SESSION}
+                value={sessionTime}
+                increment={onIncrement}
+                decrement={onDecrement}
+                updateValue={updatePhaseTime}
+                min={1}
+                max={60}
+            />
+            <div className='timer-container'>{getTimerComponent()}</div>
             <TimerControl isRunning={isRunning} onStartStop={startStopTimer} onReset={resetTimer} />
         </section>
     );
