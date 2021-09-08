@@ -1,0 +1,40 @@
+.progress-clock {
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.progress-clock svg {
+    content: '';
+    position: absolute;
+}
+
+.progress-clock span {
+    content: '';
+    position: absolute;
+    font-size: 3rem;
+}
+
+.progress-clock-seconds.progress {
+    stroke: blueviolet;
+    fill: none;
+}
+
+.progress-clock-seconds.background {
+    stroke: orange;
+    opacity: 0.5;
+    fill: none;
+}
+
+.progress-clock-minutes.progress {
+    stroke: green;
+    fill: none;
+}
+
+.progress-clock-minutes.background {
+    stroke: blue;
+    opacity: 0.5;
+    fill: none;
+}
