@@ -4,34 +4,30 @@
 
 :root {
     /* Colours */
-    --clr-bg-dark-hue: 220;
-    --clr-bg-dark-sat: 17%;
-    --clr-bg-dark-lit: 17%;
-    --clr-bg-dark: hsl(var(--clr-bg-dark-hue), var(--clr-bg-dark-sat), var(--clr-bg-dark-lit));
+    --clr-bg-dark-hue: 206;
+    --clr-bg-dark-sat: 9%;
+    --clr-bg-dark-lit: 15%;
+    --clr-bg-dark: var(--clr-bg-dark-hue), var(--clr-bg-dark-sat), var(--clr-bg-dark-lit);
 
-    --clr-bg-light-hue: 0;
-    --clr-bg-light-sat: 0%;
-    --clr-bg-light-lit: 92%;
-    --clr-bg-light: hsl(var(--clr-bg-light-hue), var(--clr-bg-light-sat), var(--clr-bg-light-lit));
+    --clr-bg-light-hue: 210;
+    --clr-bg-light-sat: 5%;
+    --clr-bg-light-lit: 29%;
+    --clr-bg-light: var(--clr-bg-light-hue), var(--clr-bg-light-sat), var(--clr-bg-light-lit);
 
-    --clr-primary-hue: 179;
-    --clr-primary-sat: 93%;
-    --clr-primary-lit: 44%;
-    --clr-primary: hsl(var(--clr-primary-hue), var(--clr-primary-sat), var(--clr-primary-lit));
+    --clr-primary-hue: 87;
+    --clr-primary-sat: 49%;
+    --clr-primary-lit: 36%;
+    --clr-primary: var(--clr-primary-hue), var(--clr-primary-sat), var(--clr-primary-lit);
 
     --clr-secondary-hue: 345;
     --clr-secondary-sat: 100%;
     --clr-secondary-lit: 59%;
-    --clr-secondary: hsl(
-        var(--clr-secondary-hue),
-        var(--clr-primary-sat),
-        var(--clr-secondary-lit)
-    );
+    --clr-secondary: var(--clr-secondary-hue), var(--clr-primary-sat), var(--clr-secondary-lit);
 
-    --clr-accent-hue: 27;
-    --clr-accent-sat: 100%;
-    --clr-accent-lit: 50%;
-    --clr-accent: hsl(var(--clr-accent-hue), var(--clr-accent-sat), var(--clr-accent-lit));
+    --clr-accent-hue: 85;
+    --clr-accent-sat: 59%;
+    --clr-accent-lit: 48%;
+    --clr-accent: var(--clr-accent-hue), var(--clr-accent-sat), var(--clr-accent-lit);
 
     /* Fonts */
     --fs-header: 3rem;
@@ -41,6 +37,7 @@
     --fs-s: 1rem;
     --fs-xs: 0.8rem;
     --fs-icon: 2rem;
+    --fs-icon-l: 3rem;
 
     --ff-header: 'Abril Fatface', cursive;
     --ff-body: 'Vollkorn', serif;
@@ -62,4 +59,28 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background-color: hsl(var(--clr-bg-dark));
+}
+
+.icon-btn {
+    font-size: var(--fs-icon);
+    background-color: transparent;
+    border: none;
+    --clr-bg-light-lit: 50%;
+    color: hsl(var(--clr-primary-hue) var(--clr-primary-sat) var(--clr-bg-light-lit));
+}
+
+.icon-btn svg {
+    display: block;
+    margin: auto;
+}
+
+.label-outline {
+    color: hsl(var(--clr-secondary));
+    --clr-secondary-lit: 20%;
+    text-shadow: -1px -1px 0 hsl(var(--clr-secondary-hue), var(--clr-secondary-sat), var(--clr-secondary-lit)),
+        1px -1px 0 hsl(var(--clr-secondary-hue), var(--clr-secondary-sat), var(--clr-secondary-lit)),
+        -1px 1px 0 hsl(var(--clr-secondary-hue), var(--clr-secondary-sat), var(--clr-secondary-lit)),
+        1px 1px 0 hsl(var(--clr-secondary-hue), var(--clr-secondary-sat), var(--clr-secondary-lit));
 }
