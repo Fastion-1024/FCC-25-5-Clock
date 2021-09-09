@@ -1,4 +1,5 @@
 import './PhaseControl.css';
+import { CgArrowUpR, CgArrowDownR } from 'react-icons/cg';
 
 const PhaseControl = ({ label, value, decrement, increment, updateValue, min, max }) => {
     const handleIncrement = () => {
@@ -27,17 +28,25 @@ const PhaseControl = ({ label, value, decrement, increment, updateValue, min, ma
 
     return (
         <div className='phase-control' onWheel={handleWheel}>
-            <span id={`${label}-label`} className='label'>
+            <span id={`${label}-label`} className='label label-outline'>
                 {label} length
             </span>
-            <button id={`${label}-decrement`} className='decrement' onClick={handleDecrement}>
-                Decrease
+            <button
+                id={`${label}-decrement`}
+                className='decrement icon-btn'
+                onClick={handleDecrement}
+            >
+                <CgArrowDownR />
             </button>
             <span id={`${label}-length`} className='value'>
                 {value}
             </span>
-            <button id={`${label}-increment`} className='increment' onClick={handleIncrement}>
-                Increase
+            <button
+                id={`${label}-increment`}
+                className='increment icon-btn'
+                onClick={handleIncrement}
+            >
+                <CgArrowUpR />
             </button>
             <input
                 type='range'

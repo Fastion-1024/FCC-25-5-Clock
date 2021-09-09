@@ -3,7 +3,7 @@ import './Timer.css';
 const Timer = ({ phase, value }) => {
     return (
         <div className='timer-clock'>
-            <h3 id='timer-label' className='label'>
+            <h3 id='timer-label' className='label label-outline'>
                 {phase}
             </h3>
             <h2 id='time-left' className='value'>
