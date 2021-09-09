@@ -36,11 +36,11 @@
     align-items: center;
 }
 
-.phase-control:nth-child(1) {
+.phase-control:nth-child(2) {
     grid-area: phase1;
 }
 
-.phase-control:nth-child(2) {
+.phase-control:nth-child(3) {
     grid-area: phase2;
 }
 
