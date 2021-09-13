@@ -6,4 +6,9 @@ const timerStyles = {
     SLIDER: 'SLIDER',
 };
 
+const getStylesArray = () => {
+    return Object.keys(timerStyles).map((key) => timerStyles[key]);
+};
+
 export default timerStyles;
+export { getStylesArray };

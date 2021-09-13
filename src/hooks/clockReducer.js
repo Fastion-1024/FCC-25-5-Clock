@@ -39,6 +39,9 @@ const reducer = (state, action) => {
         case actions.SWITCH_TO_SESSION_PHASE:
             return { ...state, timerValue: state.sessionTime * 60, timerPhase: phaseTypes.SESSION };
 
+        case actions.UPDATE_STYLE:
+            return { ...state, timerStyle: action.payload };
+
         default:
             throw new Error('No matching action found!');
     }

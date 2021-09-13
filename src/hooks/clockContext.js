@@ -82,6 +82,10 @@ const ClockProvider = ({ children }) => {
         state.isRunning ? 1000 : null
     );
 
+    const updateTimerStyle = (style) => {
+        dispatch({ type: actions.UPDATE_STYLE, payload: style });
+    };
+
     return (
         <ClockContext.Provider
             value={{
@@ -91,6 +95,7 @@ const ClockProvider = ({ children }) => {
                 updatePhaseTime,
                 startStopTimer,
                 resetTimer,
+                updateTimerStyle,
             }}
         >
             {children}
