@@ -9,6 +9,7 @@ import SliderClock from '../SliderClock/SliderClock';
 import ProgressClock from '../ProgressClock/ProgressClock';
 import TimerControl from '../TimerControl/TimerControl';
 import './Container.css';
+import CarouselContainer from '../CarouselContainer/CarouselContainer';
 
 const Container = () => {
     const {
@@ -23,6 +24,7 @@ const Container = () => {
         startStopTimer,
         resetTimer,
         timerStyle,
+        updateTimerStyle,
     } = useClockContext();
 
     const getTimerComponent = () => {
@@ -70,7 +72,17 @@ const Container = () => {
                 min={1}
                 max={60}
             />
-            <div className='timer-container'>{getTimerComponent()}</div>
+
+            <CarouselContainer>
+                <Timer value={convertSeconds(timerValue)} phase={timerPhase} />
+                <SliderClock time={timerValue} />
+                <AnalogueClock time={timerValue} />
+                <ProgressClock
+                    time={timerValue}
+                    minutesMax={timerPhase === phaseTypes.SESSION ? sessionTime : breakTime}
+                />
+            </CarouselContainer>
+
             <TimerControl isRunning={isRunning} onStartStop={startStopTimer} onReset={resetTimer} />
         </section>
     );
