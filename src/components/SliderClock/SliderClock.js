@@ -48,7 +48,9 @@ const SliderClock = ({ time }) => {
                     return (
                         <span
                             key={index}
-                            className={'slider-num'}
+                            className={`${
+                                index === secondTens ? 'slider-num active' : 'slider-num inactive'
+                            }`}
                             style={{ transform: `translateY(calc(${secondTens - index} * 4rem))` }}
                         >
                             {item}
@@ -61,7 +63,11 @@ const SliderClock = ({ time }) => {
                     return (
                         <span
                             key={index}
-                            className={'slider-num'}
+                            className={`${
+                                index === secondSingles
+                                    ? 'slider-num active'
+                                    : 'slider-num inactive'
+                            }`}
                             style={{
                                 transform: `translateY(calc(${secondSingles - index} * 4rem))`,
                             }}

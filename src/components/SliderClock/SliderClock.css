@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 20rem;
+    height: 100%;
     justify-content: center;
     align-items: center;
     overflow-y: hidden;
@@ -19,28 +19,65 @@
     width: 100%;
     height: 100%;
     background-image: linear-gradient(
-        rgba(255, 255, 255, 1) 10%,
-        rgb(255, 255, 255, 0) 50%,
-        rgba(255, 255, 255, 1) 90%
+        hsla(var(--clr-silver-hue), var(--clr-silver-sat), var(--clr-silver-lit), 0.9) 10%,
+        hsla(var(--clr-silver-hue), var(--clr-silver-sat), var(--clr-silver-lit), 0) 50%,
+        hsla(var(--clr-silver-hue), var(--clr-silver-sat), var(--clr-silver-lit), 0.9) 90%
     );
     z-index: 1;
 }
 
-.slider-clock > div {
+.minute-tens,
+.minute-singles,
+.seconds-tens,
+.seconds-singles {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3rem;
+    width: 3em;
+    height: 3em;
     background: none;
+    margin: 0 0.2em;
+
+    border: 0.2em solid hsl(var(--clr-green-hue), var(--clr-green-sat), var(--clr-green-lit));
 }
 
 .slider-num {
-    font-size: 3rem;
+    font-size: var(--fs-header);
     position: absolute;
     transition: transform 0.3s ease-in;
+    width: 1em;
+    text-align: center;
+}
+
+.slider-num.active {
+    animation: colour-change-active 0.3s ease-in forwards;
+}
+
+.slider-num.inactive {
+    animation: colour-change-inactive 0.3s ease-in forwards;
+}
+
+@keyframes colour-change-active {
+    from {
+        color: black;
+    }
+    to {
+        color: hsl(var(--clr-orange-hue), var(--clr-orange-sat), var(--clr-orange-lit));
+    }
+}
+
+@keyframes colour-change-inactive {
+    from {
+        color: hsl(var(--clr-orange-hue), var(--clr-orange-sat), var(--clr-orange-lit));
+    }
+    to {
+        color: black;
+    }
 }
 
 .slider-clock-divider {
-    font-size: 3rem;
+    font-size: var(--fs-header);
+    width: 0.75em;
+    text-align: center;
 }
