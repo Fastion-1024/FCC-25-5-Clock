@@ -1,4 +1,5 @@
-:root {
+.analogue-clock-container {
+    /* CSS Properties for Children */
     --clock-width: 20rem;
     --clock-height: 20rem;
     --mark-primary-width: 0.4rem;
@@ -16,13 +17,15 @@
     --clr-clock-mark-secondar: hsl(179, 93%, 44%);
     --clr-clock-hand-primary: hsl(345, 100%, 59%);
     --clr-clock-hand-secondary: hsl(27, 100%, 50%);
-}
 
-.clock-container {
+    /* Layout */
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
+
 /* 
     Clock Height, width, background, border and shape.
 */
