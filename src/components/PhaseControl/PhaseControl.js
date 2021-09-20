@@ -28,7 +28,7 @@ const PhaseControl = ({ label, value, decrement, increment, updateValue, min, ma
 
     return (
         <div className='phase-control' onWheel={handleWheel}>
-            <span id={`${label}-label`} className='label label-outline'>
+            <span id={`${label}-label`} className='label'>
                 {label} length
             </span>
             <button

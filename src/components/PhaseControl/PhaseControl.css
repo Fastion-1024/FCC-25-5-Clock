@@ -13,6 +13,7 @@
     text-transform: capitalize;
     font-family: var(--ff-header);
     font-size: var(--fs-l);
+    color: hsl(var(--clr-olive-hue), var(--clr-olive-sat), var(--clr-olive-lit));
 }
 
 .phase-control .decrement {
@@ -22,6 +23,9 @@
 .phase-control .value {
     grid-area: value;
     font-size: var(--fs-l);
+    font-family: var(--ff-body);
+    font-weight: 700;
+    color: hsl(var(--clr-black-hue), var(--clr-olive-sat), var(--clr-black-lit));
 }
 
 .phase-control .increment {

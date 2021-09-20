@@ -17,6 +17,9 @@
         'controls controls';
     grid-template-rows: 1fr 2fr 3fr 0.5fr;
     place-items: center;
+
+    background-color: hsl(var(--clr-white-hue), var(--clr-white-sat), var(--clr-white-lit));
+    border-radius: 0.2em;
 }
 
 /* .container h1, */
@@ -36,8 +39,8 @@
     align-items: center;
 
     padding: 0 0.4em;
-    border: 0.1em solid hsl(var(--clr-accent));
-    color: hsl(var(--clr-accent));
+    border: 0.1em solid hsl(var(--clr-green-hue) var(--clr-green-sat) var(--clr-green-lit));
+    color: hsl(var(--clr-olive-hue) var(--clr-olive-sat) var(--clr-olive-lit));
     border-radius: 0.4em;
     position: relative;
     z-index: 1;
@@ -50,7 +53,7 @@
     left: -10%;
     width: 120%;
     height: 80%;
-    background-color: hsl(var(--clr-bg-dark));
+    background-color: hsl(var(--clr-white-hue) var(--clr-white-sat) var(--clr-white-lit));
     z-index: -1;
 }
 
@@ -64,6 +67,8 @@
 
 .carousel-container {
     grid-area: timer;
+    background-color: hsl(var(--clr-silver-hue) var(--clr-silver-sat) var(--clr-silver-lit));
+    border-radius: 0.4em;
 }
 
 .timer-control {
@@ -78,13 +83,18 @@
     /* Main Layout */
     .container {
         grid-template-areas:
-            'header header header'
-            'phase1 timer timer'
-            'phase2 timer timer'
-            'controls timer timer';
+            'header header'
+            'phase1 timer'
+            'phase2 timer'
+            'controls timer';
 
-        grid-template-rows: 1fr 2fr 2fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 3fr 3fr 2fr;
+        grid-template-columns: 1fr 2fr;
+        max-width: 60rem;
+        max-height: 40rem;
     }
-    /* NEED TO ADJUST ROWS SIZING A BIT MORE */
+
+    .container h1 {
+        margin-bottom: 0.2em;
+    }
 }

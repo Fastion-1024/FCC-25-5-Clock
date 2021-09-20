@@ -3,34 +3,38 @@
 -------------------*/
 
 :root {
-    /* 
-        https://coolors.co/23272a-464a4e-60892f-86c332-ff2e62-f7ef81
-    */
     /* Colours */
-    --clr-bg-dark-hue: 206;
-    --clr-bg-dark-sat: 9%;
-    --clr-bg-dark-lit: 15%;
-    --clr-bg-dark: var(--clr-bg-dark-hue), var(--clr-bg-dark-sat), var(--clr-bg-dark-lit);
+    --clr-white-hue: 50;
+    --clr-white-sat: 21%;
+    --clr-white-lit: 95%;
 
-    --clr-bg-light-hue: 210;
-    --clr-bg-light-sat: 5%;
-    --clr-bg-light-lit: 29%;
-    --clr-bg-light: var(--clr-bg-light-hue), var(--clr-bg-light-sat), var(--clr-bg-light-lit);
+    --clr-silver-hue: 38;
+    --clr-silver-sat: 16%;
+    --clr-silver-lit: 76%;
 
-    --clr-primary-hue: 87;
-    --clr-primary-sat: 49%;
-    --clr-primary-lit: 36%;
-    --clr-primary: var(--clr-primary-hue), var(--clr-primary-sat), var(--clr-primary-lit);
+    --clr-olive-hue: 34;
+    --clr-olive-sat: 6%;
+    --clr-olive-lit: 24%;
 
-    --clr-secondary-hue: 345;
-    --clr-secondary-sat: 100%;
-    --clr-secondary-lit: 59%;
-    --clr-secondary: var(--clr-secondary-hue), var(--clr-primary-sat), var(--clr-secondary-lit);
+    --clr-black-hue: 40;
+    --clr-black-sat: 4%;
+    --clr-black-lit: 14%;
 
-    --clr-accent-hue: 85;
-    --clr-accent-sat: 59%;
-    --clr-accent-lit: 48%;
-    --clr-accent: var(--clr-accent-hue), var(--clr-accent-sat), var(--clr-accent-lit);
+    --clr-brown-hue: 25;
+    --clr-brown-sat: 9%;
+    --clr-brown-lit: 25%;
+
+    --clr-orange-hue: 17;
+    --clr-orange-sat: 83%;
+    --clr-orange-lit: 54%;
+
+    --clr-green-hue: 65;
+    --clr-green-sat: 32%;
+    --clr-green-lit: 32%;
+
+    --clr-lightgreen-hue: 52;
+    --clr-lightgreen-sat: 37%;
+    --clr-lightgreen-lit: 68%;
 
     /* Fonts */
     --fs-header: 3rem;
@@ -63,29 +67,19 @@ main {
     justify-content: center;
     align-items: center;
 
-    background-color: hsl(var(--clr-bg-dark));
+    background-color: hsl(var(--clr-brown-hue), var(--clr-brown-sat), var(--clr-brown-lit));
 }
 
 .icon-btn {
     font-size: var(--fs-icon);
     background-color: transparent;
     border: none;
-    --clr-bg-light-lit: 50%;
-    color: hsl(var(--clr-primary-hue) var(--clr-primary-sat) var(--clr-bg-light-lit));
+    color: hsl(var(--clr-orange-hue) var(--clr-orange-sat) var(--clr-orange-lit));
 }
 
 .icon-btn svg {
     display: block;
     margin: auto;
-}
-
-.label-outline {
-    color: hsl(var(--clr-secondary));
-    --clr-secondary-lit: 20%;
-    text-shadow: -1px -1px 0 hsl(var(--clr-secondary-hue), var(--clr-secondary-sat), var(--clr-secondary-lit)),
-        1px -1px 0 hsl(var(--clr-secondary-hue), var(--clr-secondary-sat), var(--clr-secondary-lit)),
-        -1px 1px 0 hsl(var(--clr-secondary-hue), var(--clr-secondary-sat), var(--clr-secondary-lit)),
-        1px 1px 0 hsl(var(--clr-secondary-hue), var(--clr-secondary-sat), var(--clr-secondary-lit));
 }
 
 .visually-hidden:not(:focus):not(:active) {

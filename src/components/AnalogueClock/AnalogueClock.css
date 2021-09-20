@@ -10,20 +10,13 @@
     --hand-minute-height: 60%;
     --hand-minute-width: 0.4em;
 
-    --clr-clock-primary: hsl(220, 17%, 17%);
-    --clr-clock-secondary: hsl(220, 15%, 25%);
-    --clr-clock-border: hsl(220, 25%, 30%);
-    --clr-clock-mark-primary: hsl(0, 0%, 92%);
-    --clr-clock-mark-secondar: hsl(179, 93%, 44%);
-    --clr-clock-hand-primary: hsl(345, 100%, 59%);
-    --clr-clock-hand-secondary: hsl(27, 100%, 50%);
-
     /* Layout */
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+    padding: 1em;
 }
 
 /* 
@@ -34,8 +27,8 @@
     height: var(--clock-width);
     position: relative;
     border-radius: 50%;
-    border: 0.5em solid var(--clr-clock-border);
-    background-color: var(--clr-clock-primary);
+    border: 0.5em solid hsl(var(--clr-green-hue), var(--clr-green-sat), var(--clr-green-lit));
+    background-color: hsl(var(--clr-brown-hue), var(--clr-brown-sat), var(--clr-brown-lit));
 }
 
 /* Clock outer-face. All time marks will relative to this element. */
@@ -55,14 +48,19 @@
     height: 100%;
     width: var(--mark-primary-width);
     left: calc(50% - (var(--mark-primary-width) / 2));
-    background-color: var(--clr-clock-mark-primary);
+    background-color: hsl(
+        var(--clr-lightgreen-hue),
+        var(--clr-lightgreen-sat),
+        var(--clr-lightgreen-lit)
+    );
     z-index: 0;
 }
 
 /* Secondary marks */
 .outer-face .mark {
     width: var(--mark-secondary-width);
-    background-color: var(--clr-clock-mark-secondar);
+    /* CHECK */
+    background-color: hsl(var(--clr-white-hue), var(--clr-white-sat), var(--clr-white-lit));
 }
 
 /* Update the position of each mark to make 8 dissecting lines*/
@@ -101,7 +99,7 @@
     width: 85%;
     height: 85%;
     border-radius: 100%;
-    background-color: var(--clr-clock-primary);
+    background-color: hsl(var(--clr-brown-hue), var(--clr-brown-sat), var(--clr-brown-lit));
     z-index: 1;
 }
 
@@ -115,7 +113,7 @@
     height: 10%;
     margin: auto;
     border-radius: 100%;
-    background-color: var(--clr-clock-secondary);
+    background-color: hsl(var(--clr-silver-hue), var(--clr-silver-sat), var(--clr-silver-lit));
     z-index: 10;
 }
 
@@ -138,7 +136,7 @@
     left: calc(50% - (var(--hand-second-width) / 2));
     top: calc((50% - var(--hand-second-height)) + 10%);
     transform-origin: center calc(var(--hand-second-height) + 20%);
-    background-color: var(--clr-clock-hand-secondary);
+    background-color: hsl(var(--clr-green-hue), var(--clr-green-sat), var(--clr-green-lit));
     z-index: 6;
 }
 
@@ -148,6 +146,6 @@
     left: calc(50% - (var(--hand-minute-width) / 2));
     top: calc((50% - var(--hand-second-height)) + 15%);
     transform-origin: center calc(var(--hand-minute-height) + 24%);
-    background-color: var(--clr-clock-hand-primary);
+    background-color: hsl(var(--clr-orange-hue), var(--clr-orange-sat), var(--clr-orange-lit));
     z-index: 5;
 }
