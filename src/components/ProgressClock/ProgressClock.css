@@ -11,7 +11,7 @@
 .progress-clock svg {
     width: 100%;
     height: 100%;
-
+    padding: 0.5em;
     content: '';
     position: absolute;
 }
@@ -19,27 +19,37 @@
 .progress-clock span {
     content: '';
     position: absolute;
-    font-size: 3rem;
+    font-size: var(--fs-header);
+    font-family: var(--ff-body);
+    font-weight: 700;
+    color: hsl(var(--clr-silver-hue), var(--clr-silver-sat), var(--clr-silver-lit));
+}
+
+.progress-clock-background {
+    stroke: hsl(var(--clr-olive-hue), var(--clr-olive-sat), var(--clr-olive-lit));
+    fill: hsl(var(--clr-olive-hue), var(--clr-olive-sat), var(--clr-olive-lit));
 }
 
 .progress-clock-seconds.progress {
-    stroke: blueviolet;
+    stroke: hsl(var(--clr-green-hue), var(--clr-green-sat), var(--clr-green-lit));
     fill: none;
 }
 
 .progress-clock-seconds.background {
-    stroke: orange;
-    opacity: 0.5;
+    stroke: hsl(var(--clr-lightgreen-hue), var(--clr-lightgreen-sat), var(--clr-lightgreen-lit));
+    opacity: 0.8;
     fill: none;
 }
 
 .progress-clock-minutes.progress {
-    stroke: green;
+    stroke: hsl(var(--clr-orange-hue), var(--clr-orange-sat), var(--clr-orange-lit));
     fill: none;
 }
 
 .progress-clock-minutes.background {
-    stroke: blue;
-    opacity: 0.5;
+    --clr-orange-lit: 80%;
+    --clr-orange-sat: 80%;
+    stroke: hsl(var(--clr-orange-hue), var(--clr-orange-sat), var(--clr-orange-lit));
+    opacity: 0.8;
     fill: none;
 }

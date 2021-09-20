@@ -13,8 +13,15 @@ const ProgressClock = ({ time, minutesMax }) => {
 
     // Work out the offset by getting the percentage of Pi * radius
     const secPercentage = 100 - (seconds / 60) * 100;
-    const secStrokeDashOffset = ((Math.PI * 2) / 100) * secPercentage * secRadius;
-    console.log(secPercentage);
+    // const secStrokeDashOffset = ((Math.PI * 2) / 100) * secPercentage * secRadius;
+    const secStrokeDashOffset =
+        minutes === minutesMax && seconds === 0
+            ? 0
+            : minutes === 0 && seconds === 0
+            ? ((Math.PI * 2) / 100) * 100 * secRadius
+            : seconds === 0
+            ? 0
+            : ((Math.PI * 2) / 100) * secPercentage * secRadius;
 
     // Create minute circle
     const minSize = 75;
@@ -32,13 +39,20 @@ const ProgressClock = ({ time, minutesMax }) => {
                 Minute circles are also translated to center.
             */}
             <svg viewBox='0 0 100 100'>
+                <circle
+                    className='progress-clock-background'
+                    cx={secSize / 2}
+                    cy={secSize / 2}
+                    r={secRadius}
+                    strokeWidth={strokeWidth / 1.4}
+                />
                 {/* Seconds Background Circle */}
                 <circle
                     className='progress-clock-seconds background'
                     cx={secSize / 2}
                     cy={secSize / 2}
                     r={secRadius}
-                    strokeWidth={strokeWidth}
+                    strokeWidth={strokeWidth / 1.4}
                     transform={`rotate(-90 ${secSize / 2} ${secSize / 2})`}
                 />
                 {/* Seconds Progress Circle */}
@@ -62,7 +76,7 @@ const ProgressClock = ({ time, minutesMax }) => {
                     cx={minSize / 2}
                     cy={minSize / 2}
                     r={minRadius}
-                    strokeWidth={strokeWidth}
+                    strokeWidth={strokeWidth / 1.4}
                     transform={`rotate(-90 ${secSize / 2} ${
                         secSize / 2
                     }) translate(${minXY}, ${minXY})`}
