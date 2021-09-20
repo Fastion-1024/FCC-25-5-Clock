@@ -1,12 +1,17 @@
 .progress-clock {
-    width: 20rem;
-    height: 20rem;
+    /* width: 20rem; */
+    /* height: 20rem; */
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 .progress-clock svg {
+    width: 100%;
+    height: 100%;
+
     content: '';
     position: absolute;
 }

@@ -6,8 +6,8 @@ const ProgressClock = ({ time, minutesMax }) => {
     const seconds = time % 60;
 
     // For now times the size by 16 to get the rem value.
-    const secSize = 15 * 16;
-    const strokeWidth = 20;
+    const secSize = 100;
+    const strokeWidth = 10;
     const secRadius = (secSize - strokeWidth) / 2;
     const secCircumference = secRadius * 2 * Math.PI;
 
@@ -17,7 +17,7 @@ const ProgressClock = ({ time, minutesMax }) => {
     console.log(secPercentage);
 
     // Create minute circle
-    const minSize = secSize - 3 * 16;
+    const minSize = 75;
     const minRadius = (minSize - strokeWidth) / 2;
     const minCircumference = minRadius * 2 * Math.PI;
     const minXY = (secSize - minSize) / 2;
@@ -31,7 +31,7 @@ const ProgressClock = ({ time, minutesMax }) => {
                 All circles are rotated from the center origin to -90degs to start from top.
                 Minute circles are also translated to center.
             */}
-            <svg height={secSize} width={secSize}>
+            <svg viewBox='0 0 100 100'>
                 {/* Seconds Background Circle */}
                 <circle
                     className='progress-clock-seconds background'
