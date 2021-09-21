@@ -19,9 +19,9 @@
     width: 100%;
     height: 100%;
     background-image: linear-gradient(
-        hsla(var(--clr-silver-hue), var(--clr-silver-sat), var(--clr-silver-lit), 0.9) 10%,
-        hsla(var(--clr-silver-hue), var(--clr-silver-sat), var(--clr-silver-lit), 0) 50%,
-        hsla(var(--clr-silver-hue), var(--clr-silver-sat), var(--clr-silver-lit), 0.9) 90%
+        hsla(var(--clr-white-hue), var(--clr-white-sat), var(--clr-white-lit), 0.9) 10%,
+        hsla(var(--clr-white-hue), var(--clr-white-sat), var(--clr-white-lit), 0) 50%,
+        hsla(var(--clr-white-hue), var(--clr-white-sat), var(--clr-white-lit), 0.9) 90%
     );
     z-index: 1;
 }

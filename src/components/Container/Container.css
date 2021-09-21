@@ -8,7 +8,6 @@
     max-width: 40rem;
     height: 100%;
     max-height: 60rem;
-    padding: 1em;
     display: grid;
     grid-template-areas:
         'header header'
@@ -18,8 +17,9 @@
     grid-template-rows: 1fr 2fr 3fr 0.5fr;
     place-items: center;
 
-    background-color: hsl(var(--clr-white-hue), var(--clr-white-sat), var(--clr-white-lit));
-    border-radius: 0.2em;
+    background-color: hsl(var(--clr-silver-hue), var(--clr-silver-sat), var(--clr-silver-lit));
+    gap: 0.8em;
+    padding: 1em;
 }
 
 /* .container h1, */
@@ -53,7 +53,7 @@
     left: -10%;
     width: 120%;
     height: 80%;
-    background-color: hsl(var(--clr-white-hue) var(--clr-white-sat) var(--clr-white-lit));
+    background-color: hsl(var(--clr-silver-hue) var(--clr-silver-sat) var(--clr-silver-lit));
     z-index: -1;
 }
 
@@ -67,12 +67,19 @@
 
 .carousel-container {
     grid-area: timer;
-    background-color: hsl(var(--clr-silver-hue) var(--clr-silver-sat) var(--clr-silver-lit));
+    background-color: hsl(var(--clr-white-hue) var(--clr-white-sat) var(--clr-white-lit));
     border-radius: 0.4em;
 }
 
 .timer-control {
     grid-area: controls;
+}
+
+.phase-control,
+.timer-control {
+    background-color: hsl(var(--clr-olive-hue) var(--clr-olive-sat) var(--clr-olive-lit));
+    border-radius: 0.4em;
+    padding: 0.6em;
 }
 
 /*-------------------------
