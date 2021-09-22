@@ -4,22 +4,25 @@
 
 /* Main layout */
 .container {
+    min-width: 20rem;
     width: 100%;
     max-width: 40rem;
+    min-height: 38rem;
     height: 100%;
     max-height: 60rem;
+    padding: 0.6em;
+
     display: grid;
     grid-template-areas:
         'header header'
         'phase1 phase2'
         'timer timer'
         'controls controls';
-    grid-template-rows: 1fr 2fr 3fr 0.5fr;
+    grid-template-rows: 0.5fr 2fr 3fr 0.5fr;
+    gap: 0.6em;
     place-items: center;
 
     background-color: hsl(var(--clr-silver-hue), var(--clr-silver-sat), var(--clr-silver-lit));
-    gap: 0.8em;
-    padding: 1em;
 }
 
 /* .container h1, */
@@ -34,27 +37,15 @@
     grid-area: header;
     font-family: var(--ff-header);
     font-size: var(--fs-header);
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 0 0.4em;
-    border: 0.1em solid hsl(var(--clr-green-hue) var(--clr-green-sat) var(--clr-green-lit));
-    color: hsl(var(--clr-olive-hue) var(--clr-olive-sat) var(--clr-olive-lit));
-    border-radius: 0.4em;
-    position: relative;
-    z-index: 1;
-}
-
-.container h1::before {
-    content: '';
-    position: absolute;
-    top: -10%;
-    left: -10%;
-    width: 120%;
-    height: 80%;
-    background-color: hsl(var(--clr-silver-hue) var(--clr-silver-sat) var(--clr-silver-lit));
-    z-index: -1;
+    color: hsl(var(--clr-silver-hue) var(--clr-silver-sat) var(--clr-silver-lit));
+    background-color: hsl(var(--clr-black-hue) var(--clr-black-sat) var(--clr-black-lit));
+    border-radius: 0.2em;
 }
 
 .phase-control:nth-child(2) {
@@ -65,6 +56,12 @@
     grid-area: phase2;
 }
 
+.phase-control {
+    background-color: hsl(var(--clr-olive-hue) var(--clr-olive-sat) var(--clr-olive-lit));
+    border-radius: 0.4em;
+    padding: 0.5em;
+}
+
 .carousel-container {
     grid-area: timer;
     background-color: hsl(var(--clr-white-hue) var(--clr-white-sat) var(--clr-white-lit));
@@ -73,11 +70,7 @@
 
 .timer-control {
     grid-area: controls;
-}
-
-.phase-control,
-.timer-control {
-    background-color: hsl(var(--clr-olive-hue) var(--clr-olive-sat) var(--clr-olive-lit));
+    background-color: hsl(var(--clr-black-hue) var(--clr-black-sat) var(--clr-black-lit));
     border-radius: 0.4em;
     padding: 0.6em;
 }
@@ -95,13 +88,31 @@
             'phase2 timer'
             'controls timer';
 
-        grid-template-rows: 1fr 3fr 3fr 2fr;
+        grid-template-rows: 1fr 4fr 4fr 1fr;
         grid-template-columns: 1fr 2fr;
         max-width: 60rem;
         max-height: 40rem;
+        min-height: 20rem;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-height: 24rem) {
+    .container {
+        gap: 0;
     }
 
     .container h1 {
-        margin-bottom: 0.2em;
+        font-size: 2.5rem;
+    }
+
+    .timer-control {
+        padding: 0.2em;
+    }
+
+    .container h1,
+    .phase-control,
+    .timer-control,
+    .carousel-container {
+        border-radius: initial;
     }
 }

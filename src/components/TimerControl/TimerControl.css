@@ -6,6 +6,6 @@
 }
 
 .timer-control .icon-btn {
-    font-size: var(--fs-icon-l);
+    font-size: var(--fs-icon-xl);
     margin: 0 0.5em;
 }
