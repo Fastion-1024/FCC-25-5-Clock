@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/FCC-25-5-Clock/static/css/main.e517e3a4.chunk.css",
+    "main.js": "/FCC-25-5-Clock/static/js/main.bedf9452.chunk.js",
+    "main.js.map": "/FCC-25-5-Clock/static/js/main.bedf9452.chunk.js.map",
+    "runtime-main.js": "/FCC-25-5-Clock/static/js/runtime-main.9438c6b3.js",
+    "runtime-main.js.map": "/FCC-25-5-Clock/static/js/runtime-main.9438c6b3.js.map",
+    "static/js/2.f5549cce.chunk.js": "/FCC-25-5-Clock/static/js/2.f5549cce.chunk.js",
+    "static/js/2.f5549cce.chunk.js.map": "/FCC-25-5-Clock/static/js/2.f5549cce.chunk.js.map",
+    "index.html": "/FCC-25-5-Clock/index.html",
+    "static/css/main.e517e3a4.chunk.css.map": "/FCC-25-5-Clock/static/css/main.e517e3a4.chunk.css.map",
+    "static/js/2.f5549cce.chunk.js.LICENSE.txt": "/FCC-25-5-Clock/static/js/2.f5549cce.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9438c6b3.js",
+    "static/js/2.f5549cce.chunk.js",
+    "static/css/main.e517e3a4.chunk.css",
+    "static/js/main.bedf9452.chunk.js"
+  ]
+}
