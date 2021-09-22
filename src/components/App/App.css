@@ -10,15 +10,15 @@
 
     --clr-silver-hue: 28;
     --clr-silver-sat: 7%;
-    --clr-silver-lit: 65%;
+    --clr-silver-lit: 70%;
 
     --clr-olive-hue: 34;
     --clr-olive-sat: 6%;
     --clr-olive-lit: 24%;
 
     --clr-black-hue: 40;
-    --clr-black-sat: 4%;
-    --clr-black-lit: 14%;
+    --clr-black-sat: 10%;
+    --clr-black-lit: 12%;
 
     --clr-brown-hue: 25;
     --clr-brown-sat: 9%;
@@ -68,6 +68,7 @@ main {
     align-items: center;
 
     background-color: hsl(var(--clr-brown-hue), var(--clr-brown-sat), var(--clr-brown-lit));
+    overflow: hidden;
 }
 
 .icon-btn {
