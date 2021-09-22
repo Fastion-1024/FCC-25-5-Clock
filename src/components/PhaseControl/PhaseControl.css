@@ -44,6 +44,17 @@
     width: 95%;
 }
 
+.icon-btn:hover .icon-arrow-down,
+.icon-btn:hover .icon-arrow-up {
+    color: hsl(var(--clr-olive-hue), var(--clr-olive-sat), var(--clr-olive-lit));
+}
+
+.icon-btn:hover .icon-arrow-down path:first-child,
+.icon-btn:hover .icon-arrow-up path:first-child {
+    fill: hsl(var(--clr-orange-hue), var(--clr-orange-sat), var(--clr-orange-lit));
+    fill-rule: nonzero;
+}
+
 @media only screen and (orientation: landscape) and (min-height: 30rem),
     (orientation: portrait) and (min-width: 30rem) {
     .phase-control .label {

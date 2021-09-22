@@ -9,3 +9,16 @@
     font-size: var(--fs-icon-xl);
     margin: 0 0.5em;
 }
+
+.icon-btn:hover .icon-play,
+.icon-btn:hover .icon-pause,
+.icon-btn:hover .icon-stop {
+    color: hsl(var(--clr-black-hue), var(--clr-black-sat), var(--clr-black-lit));
+}
+
+.icon-btn:hover .icon-play path:first-child,
+.icon-btn:hover .icon-pause path:first-child,
+.icon-btn:hover .icon-stop path:first-child {
+    fill: hsl(var(--clr-orange-hue), var(--clr-orange-sat), var(--clr-orange-lit));
+    fill-rule: nonzero;
+}
