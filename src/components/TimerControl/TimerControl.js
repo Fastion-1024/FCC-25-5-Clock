@@ -30,13 +30,20 @@ const TimerControl = ({ isRunning, onStartStop, onReset }) => {
                 ref={isRunning ? btnPauseRef : null}
             >
                 {isRunning ? (
-                    <CgPlayPauseR className='icon-pause' />
+                    <>
+                        <CgPlayPauseR className='icon-pause' aria-hidden={true} focusable={false} />
+                        <span className='visually-hidden'>Pause</span>
+                    </>
                 ) : (
-                    <CgPlayButtonR className='icon-play' />
+                    <>
+                        <CgPlayButtonR className='icon-play' aria-hidden={true} focusable={false} />
+                        <span className='visually-hidden'>Start</span>
+                    </>
                 )}
             </button>
             <button id='reset' className='icon-btn' onClick={onReset} ref={btnIconRef}>
-                <CgPlayStopR className='icon-stop' />
+                <CgPlayStopR className='icon-stop' aria-hidden={true} focusable={false} />
+                <span className='visually-hidden'>Reset</span>
             </button>
         </div>
     );

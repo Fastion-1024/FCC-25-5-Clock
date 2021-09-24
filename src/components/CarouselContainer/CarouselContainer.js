@@ -50,12 +50,12 @@ const CarouselContainer = ({ children }) => {
             onTouchEnd={handleTouchEnd}
         >
             <button className='carousel-btn-prev icon-btn' onClick={prevClicked}>
-                <span className='visually-hidden'>Previous</span>
-                <VscChevronLeft />
+                <VscChevronLeft aria-hidden={true} focusable={false} />
+                <span className='visually-hidden'>Previous Style</span>
             </button>
             <button className='carousel-btn-next icon-btn' onClick={nextClicked}>
-                <span className='visually-hidden'>Previous</span>
-                <VscChevronRight />
+                <VscChevronRight aria-hidden={true} focusable={false} />
+                <span className='visually-hidden'>Next Style</span>
             </button>
             {children.map((child, index) => {
                 return (

@@ -38,16 +38,17 @@ const PhaseControl = ({ label, value, decrement, increment, updateValue, min, ma
 
     return (
         <div className='phase-control' onWheel={handleWheel}>
-            <span id={`${label}-label`} className='label'>
+            <label id={`${label}-label`} className='label' htmlFor={`${label}Slider`}>
                 {label} length
-            </span>
+            </label>
             <button
                 id={`${label}-decrement`}
                 className='decrement icon-btn'
                 onClick={handleDecrement}
                 ref={btnIconRef}
             >
-                <CgArrowDownR className='icon-arrow-down' />
+                <CgArrowDownR className='icon-arrow-down' aria-hidden={true} focusable={false} />
+                <span className='visually-hidden'>Decrement {label} Length</span>
             </button>
             <span id={`${label}-length`} className='value'>
                 {value}
@@ -58,9 +59,11 @@ const PhaseControl = ({ label, value, decrement, increment, updateValue, min, ma
                 onClick={handleIncrement}
                 ref={btnIconRef}
             >
-                <CgArrowUpR className='icon-arrow-up' />
+                <CgArrowUpR className='icon-arrow-up' aria-hidden={true} focusable={false} />
+                <span className='visually-hidden'>Increment {label} Length</span>
             </button>
             <input
+                id={`${label}Slider`}
                 type='range'
                 min={min}
                 max={max}

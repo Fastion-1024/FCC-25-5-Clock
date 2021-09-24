@@ -39,6 +39,10 @@ const ProgressClock = ({ time, minutesMax }) => {
                 Minute circles are also translated to center.
             */}
             <svg viewBox='0 0 100 100'>
+                <title>Progress Clock</title>
+                <desc id='progressClockDesc'>
+                    Two progress circles depicting the remaining time
+                </desc>
                 <circle
                     className='progress-clock-background'
                     cx={secSize / 2}
