@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .timer-clock .label {
@@ -19,4 +20,96 @@
     flex: 1 0 4fr;
     font-size: var(--fs-header);
     font-family: var(--ff-h);
+}
+
+.timer-clock .leftIndicator,
+.timer-clock .rightIndicator,
+.timer-clock .topIndicator,
+.timer-clock .bottomIndicator {
+    position: absolute;
+    z-index: -1;
+}
+.timer-clock .leftIndicator,
+.timer-clock .rightIndicator {
+    height: 12em;
+    width: 0.2em;
+    background-color: hsl(var(--clr-orange-hue), var(--clr-orange-sat), var(--clr-orange-lit));
+    transform: scaleY(0);
+}
+
+.timer-clock .topIndicator,
+.timer-clock .bottomIndicator {
+    width: 16em;
+    height: 0.2em;
+    background-color: hsl(var(--clr-green-hue), var(--clr-green-sat), var(--clr-green-lit));
+}
+
+.leftIndicator {
+    left: calc(50% - 8em);
+}
+.rightIndicator {
+    right: calc(50% - 8em);
+}
+.topIndicator {
+    top: calc(50% - 6em);
+}
+.bottomIndicator {
+    bottom: calc(50% - 6em);
+}
+
+.leftIndicator.animate {
+    animation: topBottomOrigin 2s steps(1) infinite 1s reverse,
+        growShrinkHeight 2s linear 1s infinite;
+}
+
+.rightIndicator.animate {
+    animation: topBottomOrigin 2s steps(1) infinite 1s, growShrinkHeight 2s linear 1s infinite;
+}
+
+.topIndicator.animate {
+    animation: leftRightOrigin 2s steps(1) infinite, growShrinkWidth 2s linear infinite;
+}
+
+.bottomIndicator.animate {
+    animation: leftRightOrigin 2s steps(1) infinite reverse, growShrinkWidth 2s linear infinite;
+}
+
+@keyframes growShrinkHeight {
+    0%,
+    100% {
+        transform: scaleY(0);
+    }
+    50% {
+        transform: scaleY(100%);
+    }
+}
+
+@keyframes growShrinkWidth {
+    0%,
+    100% {
+        transform: scaleX(0);
+    }
+    50% {
+        transform: scaleX(100%);
+    }
+}
+
+@keyframes topBottomOrigin {
+    0%,
+    100% {
+        transform-origin: top;
+    }
+    50% {
+        transform-origin: bottom;
+    }
+}
+
+@keyframes leftRightOrigin {
+    0%,
+    100% {
+        transform-origin: left;
+    }
+    50% {
+        transform-origin: right;
+    }
 }

@@ -74,7 +74,11 @@ const Container = () => {
             />
 
             <CarouselContainer>
-                <Timer value={convertSeconds(timerValue)} phase={timerPhase} />
+                <Timer
+                    value={convertSeconds(timerValue)}
+                    phase={timerPhase}
+                    isRunning={isRunning}
+                />
                 <SliderClock time={timerValue} />
                 <AnalogueClock time={timerValue} />
                 <ProgressClock
