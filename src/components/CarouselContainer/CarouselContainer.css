@@ -14,12 +14,19 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 5;
+    font-size: var(--fs-icon-l);
 }
 .carousel-btn-prev {
-    left: 0;
+    left: 0.1em;
 }
 .carousel-btn-next {
-    right: 0;
+    right: 0.1em;
+}
+
+.carousel-btn-prev:hover,
+.carousel-btn-next:hover {
+    background-color: hsla(var(--clr-olive-hue), var(--clr-olive-sat), var(--clr-olive-lit), 0.5);
+    border-radius: 0.2em;
 }
 
 .carousel-child {
