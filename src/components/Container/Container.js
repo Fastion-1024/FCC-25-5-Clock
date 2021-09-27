@@ -73,7 +73,7 @@ const Container = () => {
                 max={60}
             />
 
-            <CarouselContainer>
+            <CarouselContainer disabled={isRunning}>
                 <Timer
                     value={convertSeconds(timerValue)}
                     phase={timerPhase}

@@ -15,12 +15,19 @@
     transform: translateY(-50%);
     z-index: 5;
     font-size: var(--fs-icon-l);
+    transition: opacity 0.3s ease-in-out;
 }
 .carousel-btn-prev {
     left: 0.1em;
 }
 .carousel-btn-next {
     right: 0.1em;
+}
+
+.carousel-btn-next.disabled,
+.carousel-btn-prev.disabled {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .carousel-btn-prev:hover,
