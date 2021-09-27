@@ -40,6 +40,7 @@
     margin: 0 0.2em;
 
     border: 0.2em solid hsl(var(--clr-green-hue), var(--clr-green-sat), var(--clr-green-lit));
+    color: hsl(var(--clr-black-hue), var(--clr-black-sat), var(--clr-black-lit));
 }
 
 .slider-num {

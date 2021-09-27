@@ -14,12 +14,14 @@
     font-size: var(--fs-xl);
     font-family: var(--ff-body);
     text-transform: capitalize;
+    color: hsl(var(--clr-olive-hue), var(--clr-olive-sat), var(--clr-olive-lit));
 }
 
 .timer-clock .value {
     flex: 1 0 4fr;
     font-size: var(--fs-header);
     font-family: var(--ff-h);
+    color: hsl(var(--clr-olive-hue), var(--clr-olive-sat), var(--clr-olive-lit));
 }
 
 .timer-clock .leftIndicator,
