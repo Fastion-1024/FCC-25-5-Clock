@@ -28,13 +28,13 @@
     --clr-orange-sat: 83%;
     --clr-orange-lit: 54%;
 
-    --clr-green-hue: 65;
-    --clr-green-sat: 32%;
-    --clr-green-lit: 32%;
+    --clr-green-hue: 60;
+    --clr-green-sat: 30%;
+    --clr-green-lit: 40%;
 
     --clr-lightgreen-hue: 52;
-    --clr-lightgreen-sat: 37%;
-    --clr-lightgreen-lit: 68%;
+    --clr-lightgreen-sat: 30%;
+    --clr-lightgreen-lit: 75%;
 
     /* Fonts */
     --fs-header: 3rem;
