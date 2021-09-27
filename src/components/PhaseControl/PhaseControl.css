@@ -27,6 +27,8 @@
     font-size: var(--fs-l);
     font-family: var(--ff-body);
     font-weight: 700;
+    min-width: calc(var(--fs-l) * 1.5);
+    text-align: center;
 }
 
 .phase-control .label,
